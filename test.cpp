@@ -1,10 +1,11 @@
-#include <iostream>
-#include "Adjgraph.h"
-using namespace std;
+#include<iostream>
+#include"Adjgraph.h"
 int main()
 {
-    VertexNode<int>*v=new VertexNode<int>;
-    AdjGraph<int>*gra=new AdjGraph<int>;
-    gra->newnode(v);
-    return 0;
+
+   VertexNode<int>*v=new VertexNode<int>;
+   EdgeNode*f=new EdgeNode;
+   AdjGraph<int>*gra=new AdjGraph<int>;
+   gra->CreatGraph(); 
+   return 0;
 }
