@@ -50,7 +50,7 @@ template<typename T>class AdjGraph
         };
         VertexNode<T>*newnode(VertexNode<T>*n);
         void DelNode(VertexNode<T>*n);
-        void setsucc(VertexNode<T>*v1,VertexNode<T>*v2);
+        void setsucc(VertexNode<T>*v1,VertexNode<T>*v2,int weight);
         void Delsucc(VertexNode<T>*v1,VertexNode<T>*v2);
         VertexNode<T>**listofnodesucc(VertexNode<T>*v);
         int findloc(VertexNode<T>*v);
@@ -152,7 +152,7 @@ void AdjGraph<T>::CreatGraph()
        cin>>adjvex;
        cout<<"输入这条边的权"<<endl;
        cin>>weight;
-       setsucc(vexlist[loc],vexlist[adjvex]);
+       setsucc(vexlist[loc],vexlist[adjvex],weight);
       /* EdgeNode*p=new EdgeNode;
        p->cost=weight;
        p->adjvex=adjvex;
@@ -272,7 +272,7 @@ void AdjGraph<T>:: Delsucc(VertexNode<T>*v1,VertexNode<T>*v2)
 
 };
 template<typename T>
-void AdjGraph<T>::setsucc(VertexNode<T>*v1,VertexNode<T>*v2)
+void AdjGraph<T>::setsucc(VertexNode<T>*v1,VertexNode<T>*v2,int weight)
 {
     int loc1,loc2;
     loc1=findloc(v1);
@@ -281,6 +281,7 @@ void AdjGraph<T>::setsucc(VertexNode<T>*v1,VertexNode<T>*v2)
  // EdgeNode*n2=new EdgeNode;
   EdgeNode*tmp=new EdgeNode;
   n1->adjvex=loc2;
+  n1->cost=weight;
  // n2->adjvex=loc1;
   tmp=vexlist[loc1]->firstedge->next;
   if(!tmp) vexlist[loc1]->firstedge->next=n1;

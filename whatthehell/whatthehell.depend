@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1386463602 source:/home/rw/workspace/Graph/homework4.cpp
+	<iostream>
+	"MTGraph.h"
+	"Adjgraph.h"
+
+1386419929 /home/rw/workspace/Graph/MTGraph.h
+	<iostream>
+	<cstdio>
+	"LinkedQueue.h"
+
+1385954868 /home/rw/workspace/Graph/LinkedQueue.h
+	<iostream>
+	<cassert>
+
+1386462008 /home/rw/workspace/Graph/Adjgraph.h
+	<iostream>
+	"LinkedQueue.h"
+

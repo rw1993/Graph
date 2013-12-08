@@ -12,11 +12,11 @@ void Adj_to_MT(AdjGraph<T>*a,MTGraph<T>*m)
         //a->vexlist[i]->firstedge中没有adjvex
         EdgeNode*tmp=new EdgeNode;
         tmp=a->vexlist[i]->firstedge->next;
-            while(tmp)
-            {
-               m->edge[i][tmp->adjvex]=tmp->cost;
-               tmp=tmp->next;
-            }
+        while(tmp)
+       {
+         m->edge[i][tmp->adjvex]=tmp->cost;
+         tmp=tmp->next;
+        }
         
     }
 
