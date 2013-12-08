@@ -8,12 +8,12 @@ using namespace std;
 template<typename T>
 class MTGraph
 {
-    private:
+    public:
         T * Vexlist;
         int edge[MAX][MAX];
         int num_of_node;
         int num_of_edge;
-    public:
+   
         MTGraph()
         {
             Vexlist=new T[MAX];
