@@ -82,7 +82,11 @@ void MTGraph<T>::DFS2_the_gra()
     {
         visited[i]=false;
     }
-    DFS2(0,visited,dfn);
+    for(int i=0;i<num_of_node;i++)
+    {
+        if(!visited[i])
+            DFS2(i,visited,dfn);
+    }
 };
 template<typename T>
 void MTGraph<T>::DFS2(int i,bool *visited,int *dfn)

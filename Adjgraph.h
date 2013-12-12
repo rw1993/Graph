@@ -61,15 +61,26 @@ template<typename T>class AdjGraph
         void CreatGraph();
         void DFSTraverse();
         void DFS1(int i,int &count,bool visited[],int dfn[]);
-        void BFS1(int k);
+        void BFS1(int k,bool *visited);
+        void BFS_the_gra();
 };
 template<typename T>
-void AdjGraph<T>::BFS1(int k)
+void AdjGraph<T>::BFS_the_gra()
 {
-    int i;
     bool visited[number_of_nodes];
     for(int i=0;i<number_of_nodes;i++) visited[i]=false;
-    EdgeNode*p=new EdgeNode;
+    for(int i=0;i<number_of_nodes;i++)
+    {
+        if(!visited[i])
+            BFS1(i,visited);
+    }
+
+};
+template<typename T>
+void AdjGraph<T>::BFS1(int k,bool* visited)
+{
+    int i;
+       EdgeNode*p=new EdgeNode;
     LinkedQueue<int>*q=new LinkedQueue<T>;
     cout<<vexlist[k]->data<<endl;
     q->EnQueue(k);
