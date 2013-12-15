@@ -3,6 +3,7 @@
 #include"stdio.h"
 #define MAX 100
 using namespace std;
+
 template<typename T>
 void Prim(MTGraph<T>*m)
 {
